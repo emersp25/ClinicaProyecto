@@ -32,6 +32,14 @@ public class ClienteController {
     @PostMapping("/guardarCliente")
     public String guardarCliente(@Valid Cliente cliente, BindingResult bindingResult){
 
+        if (clienteService.buscarPorCui(cliente.getCui()) != null){
+            bindingResult.rejectValue("cui", "error.cliente", "Ya existe un cliente con ese CUI");
+        }
+
+        if (clienteService.buscarPorNit(cliente.getNit()) != null){
+            bindingResult.rejectValue("nit", "error.cliente", "Ya existe un cliente con ese NIT");
+        }
+
         Rol rol = rolService.buscarPorId(2L);
         cliente.getUsuario().setRol(rol);
         cliente.getUsuario().setContrasenia(Utils.encriptarContrasenia(cliente.getUsuario().getContrasenia()));

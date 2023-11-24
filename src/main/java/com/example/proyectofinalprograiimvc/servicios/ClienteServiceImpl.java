@@ -45,4 +45,6 @@ public class ClienteServiceImpl implements CrudService<Cliente>{
     public Cliente buscarPorCui(String cui){
         return clienteRepositorio.findByCui(cui);
     }
+
+    public Cliente buscarPorNit(String nit){ return clienteRepositorio.findByNit(nit); }
 }
