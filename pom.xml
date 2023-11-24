@@ -11,6 +11,7 @@
     <groupId>com.example</groupId>
     <artifactId>proyecto-final-prograII-mvc</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
     <name>proyecto-final-prograII-mvc</name>
     <description>proyecto-final-prograII-mvc</description>
     <properties>
